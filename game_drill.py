@@ -1,6 +1,6 @@
 from sys import exit
 
-# crate the temple function
+# The temple function
 def temple():
   print ("""You're inside the treasure room,
   The room is full of treasure chests,
@@ -13,48 +13,99 @@ def temple():
   else:
   	   dead("Too greedy, the temple collapsed over your head.")
 
+# The mountain function with 2 choices for the user.
 def mountain():
   print ("""You're now in the great witch mountains area.
   You see high mountains with wide valleys in between.
   What you will do?
   climp a mountain, walk through a valley or doing something else?\n""")
-
-  choice = input("> ")
-
-  if "climp" in choice:
-    dead("The great witch tranform you into a frog.")
-
-  elif "walk" in choice:
-    print("Walk has no end.")
-    # start()
-
+  	
+  choice = input("> ").upper() # to collect user input and make it uppercase.
+  
+  if "CLIMP" in choice:
+    dead("The great witch tranform you into a frog.") # print if word "climp" is in user input
+  	  
+  elif "WALK" in choice:
+    print("Walk has no end.") # print if word "walk" is in user input
+    # start() # if user input contains word "walk", he will sent back to the start.
+  	  
   else:
-    print ("You need to take a better decision.\n")
-    mountain()
+    print ("You need to take a better decision.\n") # print if user took any other choice.
+    mountain() # if user took a choice other than walk or climp, mountain function runs again.
 
+# The stream function with 3 choices or back to start.
 def stream():
   print ("""You're in front off a fast chilling water stream.
   What is your decision? Swim, use Kayak or passing the lettle far bridge.""")
-
-  choice = input("> ").upper()
-
+  
+  choice = input("> ").upper() # to collect user input and make it uppercase.
+  
   if "SWIM" in choice:
-    dead("Ice cold water, you're shaking beyond control.")
-
+    dead("Ice cold water, you're shaking beyond control.") # print if user iput contains the word swim.
+    
   elif "KAYAK" in choice:
-    dead("Water is too fast, you hit the rocks.")
-
+    dead("Water is too fast, you hit the rocks.") # print if user input contains the word kayak.
+    
   elif "BRIDGE" in choice:
-    print ("You suddenly find yourself in the golden route, you must see the temple any moment.")
-
+    print ("You suddenly find yourself in the jungle route, you must see the temple any moment.") # print if user input contains the word bridge.
+    # jungle() # call jungle function.
+    
   else:
-    print ("You better fishing next time.")
-    # start()
+    print ("You better fishing next time.") # print if user made any other choice.
+    # start() # call start function to restart the game.
+    
+# The tiger function
+bag_items = ["Knife", "Compass", "Dried meat", "rop", "ligher"]
+
+def tiger():
+  print ("That wasn't the safest choice, entrance door is closing behind you and you're facing a big tiger blocking jungle route.")
+  print ("What you'll do? try running to bypass the tiger\nor check your bag for other idea.")
+  
+  choice = input("> ").upper()
+  
+  if "BAG" in choice:
+  	bag()
+  	reaction()
+				
+        
+def bag():
+	print ("Items in the bag:\n")
+	items_count = len(bag_items)
+	for i in range(0, items_count):
+	  print ("\t", i+1, "- ", bag_items[i])
+	  
+selected_item = input("What are You gone to use?> ").upper
 
 
+def reaction():
+	tiger_moved = False
+	while True:
+		if "KNIFE" in selected_item:
+			dead("You couldn't kill the tiger with a knife.")
+	        
+		elif "COMPASS" in selected_item:
+			dead("Are you kidding? What the hell are you going to do with the comapss?!!")
+			
+		elif "DRIED MEAT" in selected_item and not tiger_moved:
+			print ("The tiger moved, the intrance of jungle route is clear, hurry up.")
+			tiger_moved = True
+			
+		elif "ROP" in selected_item:
+			dead("You couldn't tie the big tiger with the rop.")
+			
+		elif "LIGHTER" in selected_item:
+			dead("You can't scare a thiger with a lighter.")
+			
+		else:
+			print ("You don't have this item in the bag.")
+        
 def dead(why):
   print (why, "Happy stroll.")
+  exit(0)
 
+# ------ to be removed ---------
 # temple()
 # mountain()
-stream()
+# stream()
+tiger()
+# ------------------------------
