@@ -58,12 +58,12 @@ def stream():
 bag_items = ["Knife", "Compass", "Dried meat", "rop", "ligher"]
 
 def tiger():
-  print ("That wasn't the safest choice, entrance door is closing behind you and you're facing a big tiger blocking jungle route.")
-  print ("What you'll do? try running to bypass the tiger\nor check your bag for other idea.")
+	print ("That wasn't the safest choice, entrance door is closing behind you and you're facing a big tiger blocking jungle route.")
+	print ("What you'll do? try running to bypass the tiger\nor check your bag for other idea.")
   
-  choice = input("> ").upper()
+	choice = input("> ").upper()
   
-  if "BAG" in choice:
+	if "BAG" in choice:
   	bag()
   	reaction()
 				
