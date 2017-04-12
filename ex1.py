@@ -1,0 +1,7 @@
+#print ("Hello World!")
+#print ("I like typing this")
+#print ("thi is fun")
+#print ('yay! printing')
+#print ("I'd much rather you 'not'.")
+#print ('I "said" do not touch this.')
+print ("we learnd something new about python 3")
