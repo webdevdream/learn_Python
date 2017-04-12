@@ -74,28 +74,25 @@ def bag():
     for i in range(0, items_count):
         print ("\t", i+1, "- ", bag_items[i])
 
-    #while True:
-    tiger_moved = False
     selected_item = input("What are You gone to use?> ").upper()
-    # if selected_item == "KNIFE":
+
     if "KNIFE" in selected_item:
         dead("You couldn't kill the tiger with a knife.")
-    # elif selected_item == "COMPASS":
+
     elif "COMPASS" in selected_item:
         dead("Are you kidding? What the hell are you going to do with the comapss?!!")
-    # elif selected_item == "DRIED MEAT" and not tiger_moved:
+
     elif "DRIED MEAT" in selected_item:
         print ("The tiger moved, the intrance of jungle route is clear, hurry up.")
         jungle_route()
-        # tiger_moved = False
-    # elif selected_item == "ROP":
+
     elif "ROP" in selected_item:
         dead("You couldn't tie the big tiger with the rop.")
-    # elif selected_item == "LIGHTER":
+
     elif "LIGHTER" in selected_item:
         dead("You can't scare a thiger with a lighter.")
     else:
-        print ("You don't have this item in the bag.")
+        print ("You don't have this item in the bag, please select an item from the bag.")
         bag()
 
 def dead(why):
