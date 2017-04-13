@@ -29,8 +29,8 @@ def mountain():
         dead("The great witch tranform you into a frog.") # print if word "climp" is in user input
 
     elif "WALK" in choice:
-        print("Walk has no end.") # print if word "walk" is in user input
-        # start() # if user input contains word "walk", he will sent back to the start.
+        print("Walk has no end, you returned to the same start point.") # print if word "walk" is in user input
+        start() # if user input contains word "walk", he will sent back to the start.
 
     else:
         print ("You need to take a better decision.\n") # print if user took any other choice.
@@ -50,12 +50,12 @@ def stream():
         dead("Water is too fast, you hit the rocks.") # print if user input contains the word kayak.
 
     elif "BRIDGE" in choice:
-        print ("You suddenly find yourself in the jungle route, you must see the temple any moment.") # print if user input contains the word bridge.
-        # jungle() # call jungle function.
+        print ("You suddenly find yourself in the jungle route.") # print if user input contains the word bridge.
+        jungle() # call jungle function.
 
     else:
         print ("You better fishing next time.") # print if user made any other choice.
-        # start() # call start function to restart the game.
+        start() # call start function to restart the game.
 
 # The tiger function
 bag_items = ["Knife", "Compass", "Dried meat", "rop", "ligher"]
@@ -117,11 +117,44 @@ def jungle_route():
         print ("That was a strange decision.")
         exit(0)
 
+def jungle():
+    print ("\nNice place, lot of exotic birds and baboons, keep going.")
+
+    choice = input("You reached the 'Golden Temple', will you go inside?").upper()
+
+    if "YES" in choice:
+        print ("Great decision.")
+        temple()
+
+    else:
+        print ("That was a strange decision.")
+        exit(0)
+
+def start():
+    print ("START THE ADVENTURE")
+    print ("\nTo start the adventure choose which direction to go, right, left or forward.\n")
+
+    choice = input ("> ").upper()
+
+    if "RIGHT" in choice:
+        tiger()
+
+    elif "LEFT" in choice:
+        stream()
+
+    elif "FORWARD" in choice:
+        mountain()
+
+    else:
+        print ("That's not an option.")
+        start()
+
 
 # ------ to be removed ---------
 # temple()
 # mountain()
 # stream()
-tiger()
+# tiger()
 # bag()
+start()
 # ------------------------------
